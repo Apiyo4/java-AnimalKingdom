@@ -13,6 +13,9 @@ public abstract class AnimalAbstract{
         id = maxId;
         food=0;
     }
+    public int getId(){
+        return id;
+    }
     public void eat(){
         food = food + 1 ;
     }
