@@ -1,7 +1,5 @@
 package animalKingdom;
 
-import org.graalvm.compiler.lir.aarch64.AArch64Move.Move;
-
 public abstract class AnimalAbstract{
     protected static int maxId = 0;
     protected int id;
@@ -12,6 +10,8 @@ public abstract class AnimalAbstract{
         maxId++;
         id = maxId;
         food=0;
+        this.name = name;
+        this.year = year;
     }
     public int getId(){
         return id;
@@ -34,6 +34,5 @@ public abstract class AnimalAbstract{
     public abstract String move();
     public abstract String breath();
     public abstract String reproduce();
-    
 
 }
