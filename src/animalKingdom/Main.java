@@ -4,11 +4,25 @@ import java.util.*;
 
 public class Main{
         public static ArrayList<AnimalAbstract> filteredList = new ArrayList<AnimalAbstract>();
+        
+        public static void printAnimalsSorted(ArrayList<AnimalAbstract> animals, CheckAnimal tester) {
+            filteredList.clear();
+            for (AnimalAbstract v : animals) {
+                if (tester.test(v)) {
+                    // Parrot eggs fly lungs 1824
+                    System.out.println(
+                            v.getName() + " " + v.reproduce() + " " + v.move() + " " + v.breath() + " " + v.getYear());
+                }
+            }
+        }
+        
         public static void printAnimals(ArrayList<AnimalAbstract> animals, CheckAnimal tester){
             filteredList.clear();
+            animals.sort((v1, v2) -> v1.getName().compareToIgnoreCase(v2.getName()));
             for(AnimalAbstract v: animals){
                 if (tester.test(v)) {
-                    System.out.println(v);
+                    // Parrot eggs fly lungs 1824
+                    System.out.println(v.getName() + " " +  v.reproduce() + " " + v.move()+ " " + v.breath() + " "+ v.getYear());
                 }
             }
         }
@@ -65,5 +79,17 @@ public class Main{
         System.out.println();
         System.out.println("List only those animals the breath with lungs");
         printAnimals(myList, v->v.breath().equalsIgnoreCase("lungs"));
+    // List only those animals that breath with lungs and were named in 1758
+        System.out.println();
+        System.out.println("List only those animals that breath with lungs and were named in 1758");
+        printAnimals(myList, v -> v.breath().equalsIgnoreCase("lungs") && v.getYear() == 1758);
+        // List only those animals that lay eggs and breath with lungs
+        System.out.println();
+        System.out.println("List only those animals that lay eggs and breath with lungs");
+        printAnimals(myList, v -> v.breath().equalsIgnoreCase("lungs") && v.reproduce().equals("eggs"));
+        // List alphabetically only those animals that were named in 1758
+        System.out.println();
+        System.out.println("List alphabetically only those animals that were named in 1758");
+        printAnimalsSorted(myList, v -> v.getYear() == 1758 );
     }
 }
