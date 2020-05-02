@@ -47,5 +47,10 @@ public class Main{
         System.out.println("List all the animals alphabetically");
         myList.sort((v1, v2) -> v1.getName().compareToIgnoreCase(v2.getName()));
         myList.forEach((v) -> System.out.println(v));
+    //  List all the animals order by how they move
+        System.out.println();
+        System.out.println("List all the animals order by how they move");
+        myList.sort((v1, v2) -> v1.move().compareToIgnoreCase(v2.move()));
+        myList.forEach((v) -> System.out.println(v));
     }
 }
