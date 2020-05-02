@@ -91,5 +91,9 @@ public class Main{
         System.out.println();
         System.out.println("List alphabetically only those animals that were named in 1758");
         printAnimalsSorted(myList, v -> v.getYear() == 1758 );
+    // For the list of animals, list alphabetically those animals that are mammals.
+        System.out.println();
+        System.out.println("For the list of animals, list alphabetically those animals that are mammals");
+        printAnimalsSorted(myList, v -> v instanceof Mammals);
     }
 }
