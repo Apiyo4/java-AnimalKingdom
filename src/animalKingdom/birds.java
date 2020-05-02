@@ -19,4 +19,9 @@ public class Birds extends AnimalAbstract{
     public String reproduce() {
         return "eggs";
     };
+    
+    @Override
+    public String toString() {
+        return "Birds{" + "id='" + id + '\'' + ", year = " + year + ", name = " + name + '}';
+    }
 }

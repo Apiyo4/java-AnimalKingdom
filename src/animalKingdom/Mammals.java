@@ -18,4 +18,9 @@ public class Mammals extends AnimalAbstract{
     public String reproduce(){
         return "live births";
     };
+    
+    @Override
+    public String toString() {
+        return "Mammals{" + "id='" + id + '\'' + ", year = " + year + ", name = " + name + '}';
+    }
 }
