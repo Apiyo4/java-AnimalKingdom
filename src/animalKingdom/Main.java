@@ -3,7 +3,16 @@ package animalKingdom;
 import java.util.*;
 
 public class Main{
-    public static void main(String[] args){
+        public static ArrayList<AnimalAbstract> filteredList = new ArrayList<AnimalAbstract>();
+        public static void printAnimals(ArrayList<AnimalAbstract> animals, CheckAnimal tester){
+            filteredList.clear();
+            for(AnimalAbstract v: animals){
+                if (tester.test(v)) {
+                    System.out.println(v);
+                }
+            }
+        }
+        public static void main(String[] args){
         Mammals panda =  new Mammals("Panda", 1869);
         Mammals zebra = new Mammals("Zebra", 1778);
         Mammals koala = new Mammals("Koala", 1816);
@@ -52,5 +61,9 @@ public class Main{
         System.out.println("List all the animals order by how they move");
         myList.sort((v1, v2) -> v1.move().compareToIgnoreCase(v2.move()));
         myList.forEach((v) -> System.out.println(v));
+    // List only those animals the breath with lungs
+        System.out.println();
+        System.out.println("List only those animals the breath with lungs");
+        printAnimals(myList, v->v.breath().equalsIgnoreCase("lungs"));
     }
 }
