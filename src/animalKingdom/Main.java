@@ -38,5 +38,9 @@ public class Main{
         myList.add(salmon);
         myList.add(catfish);
         myList.add(perch);
+        
+        myList.sort((v1, v2) -> v1.getYear() - v2.getYear());
+        myList.forEach((v) -> System.out.println(v));
+
     }
 }
