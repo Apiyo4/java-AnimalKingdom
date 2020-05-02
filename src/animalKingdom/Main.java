@@ -38,10 +38,14 @@ public class Main{
         myList.add(salmon);
         myList.add(catfish);
         myList.add(perch);
-       
+        System.out.println("List all the animals in descending order by year named");
+    //    List all the animals in descending order by year named
         myList.sort((v1, v2) -> v2.getYear() - v1.getYear());
         myList.forEach((v) -> System.out.println(v));
-       
-
+    //    List all the animals alphabetically
+        System.out.println();
+        System.out.println("List all the animals alphabetically");
+        myList.sort((v1, v2) -> v1.getName().compareToIgnoreCase(v2.getName()));
+        myList.forEach((v) -> System.out.println(v));
     }
 }
